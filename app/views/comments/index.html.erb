@@ -1,0 +1,15 @@
+
+
+<%= text_field :search, 'search', placeholder: 'Buscar' %>
+
+<%= form_with model: Comment.new, local: true do |f| %>
+ <%= f.label :content %>
+ <%= f.text_field :content %>
+ <%= f.submit :enviar, id:'button' %>
+<% end %>
+
+<div id='comments'></div>
+    <% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+<% end %>
+
